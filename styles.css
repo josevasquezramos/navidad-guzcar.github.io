@@ -1,0 +1,142 @@
+
+/* @import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap'); */
+
+/* Reset general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: url('back.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Handlee', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+/* Asegura que el contenido ocupe toda la pantalla */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo para la tarjeta */
+.card-n {
+    width: 325px;
+    height: 325px;
+    position: relative;
+    perspective: 1400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 30px; /* Subimos la posición inicial */
+    margin: auto; /* Centra horizontalmente */
+    transition: top 1.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.card-n.open-n {
+    top: 120px; /* Subimos la posición al abrir */
+}
+
+.open-message {
+    text-align: center;
+    margin-bottom: 30px; /* Reduce el espacio debajo del mensaje */
+    margin-top: -20px; /* Mueve el mensaje hacia arriba */
+    color: #fff;
+    font-size: 1.2em;
+}
+
+
+.left-card-n {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    box-shadow: 5px 0px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 1.5s cubic-bezier(0.25, 1, 0.5, 1); /* Animación más fluida */
+    transform-style: preserve-3d;
+    transform-origin: top;
+}
+
+.left-card-n img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.left-card-n .card-n-front,
+.left-card-n .card-n-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+}
+
+.left-card-n .card-n-back {
+    background: #f4f4f4;
+    transform: rotateX(180deg);
+}
+
+.card-n.open-n .left-card-n {
+    transform: rotateX(180deg);
+}
+
+.right-card-n {
+    background: #fff;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+    color: #444;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.right-card-n h2 {
+    color: crimson;
+    font-family: 'Handlee', sans-serif !important;
+	font-size: 40px;
+}
+
+.right-card-n p b {
+    color: #1f439f;
+}
+
+/* Mensaje de apertura */
+.open-message {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #555;
+    font-size: 1.2em;
+}
+
+/* Footer */
+footer {
+    background: #444;
+    color: #fff;
+    text-align: center;
+    padding: 10px 20px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
